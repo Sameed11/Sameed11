@@ -1,16 +1,21 @@
-## Hi there 👋
+# Hi, I'm Ahmed Sameed
 
-<!--
-**Sameed11/Sameed11** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+Data Scientist with an MSc in Data Science from the University of Potsdam.  
+I work across machine learning, analytics, and data engineering, with projects in EEG signal processing, time-series forecasting, SQL data warehousing, and business reporting.
 
-Here are some ideas to get you started:
+## Featured Projects
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+### EEG Attention State Prediction
+Meta-learning and uncertainty-aware deep learning pipeline for EEG-based behavioral state prediction.
+
+### SQL Data Warehouse
+Medallion architecture project using SQL Server with bronze, silver, and gold layers.
+
+### Electricity Consumption Forecasting
+Time-series forecasting project using baseline models, Random Forest, and LSTM.
+
+## Core Skills
+Python · SQL · Machine Learning · Deep Learning · Data Engineering · Power BI · Time-Series Analysis · EEG Signal Processing
+
+## Contact
+LinkedIn: linkedin.com/in/ahmed-sameed11
