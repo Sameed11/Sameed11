@@ -4,8 +4,7 @@
 
 I build ML pipelines, data warehouses, and predictive models. My thesis research
 focused on EEG-based behavioral state prediction using meta-learning and
-uncertainty-aware deep learning. Currently open to data science and ML engineering
-roles in Germany.
+uncertainty-aware deep learning.
 
 ---
 
@@ -40,4 +39,4 @@ electricity demand forecasting, evaluated with RMSE, MAE, and MAPE.
 ## Contact
 
 🔗 [linkedin.com/in/ahmed-sameed11](https://linkedin.com/in/ahmed-sameed11)
-🟢 Open to work — data science, ML engineering, and analytics roles in Germany
+
