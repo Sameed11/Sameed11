@@ -2,7 +2,7 @@
 
 📍 Dortmund, Germany · MSc Data Science, University of Potsdam
 
-I build ML pipelines, data warehouses, and predictive models. My thesis research
+I build ML pipelines, data warehouses, and predictive models. My master's thesis research
 focused on EEG-based behavioral state prediction using meta-learning and
 uncertainty-aware deep learning.
 
