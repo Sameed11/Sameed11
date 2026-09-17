@@ -21,28 +21,20 @@
   <img src="https://img.shields.io/badge/Flask-000000?style=flat&logo=flask&logoColor=white">
 </p>
 
-I work on time series and tabular problems end to end: SQL to get the data usable, scikit-learn
-and PyTorch to model it, and enough engineering that the result reproduces. Each project below states
-the baseline it beat, because an accuracy figure on its own tells you nothing.
 
+I work across data engineering, analytics, and applied machine learning, taking projects from raw
+data to reliable, decision-ready outputs. My work spans SQL data pipelines and warehouses,
+time-series and tabular modelling, sensor data, forecasting, and uncertainty-aware ML using Python,
+scikit-learn, PyTorch, and Power BI. I care about reproducibility, data quality, and meaningful
+evaluation, so every project is benchmarked against a clear baseline rather than judged by a
+standalone metric.
+ 
 Looking for my first full-time role — **Data Scientist, Data Analyst, Data Engineer or ML Engineer** —
 in Germany or the EU.
 
 <br/>
 
 ## Projects
-
-### ⚡ [Day-ahead electricity demand forecasting](https://github.com/Sameed11/electricity-consumption-forecasting)
-Turkish national grid load, 24 hours ahead. 39,456 hourly observations, rolling-origin backtest.
-
-**2.79% MAPE · 55% better than seasonal naive**
-
-Shipped LightGBM over a marginally better LSTM: the gap failed a paired *t*-test at 15x the
-training cost. COVID broke the model, the write-up explains exactly why.
-
-`LightGBM` `PyTorch` `time series` `backtesting` `pytest`
-
-<br/>
 
 ### 🧠 [EEG attention state prediction](https://github.com/Sameed11/msc-thesis-eeg-attention) · MSc thesis
 Attention states from 16-channel EEG across 9 subjects and 4 paradigms, validated leave-one-subject-out.
@@ -53,6 +45,18 @@ States discovered by clustering rather than assigned in advance. Every predictio
 calibrated uncertainty estimate, so low-confidence outputs can be rejected instead of trusted.
 
 `LightGBM` `XGBoost` `Transformer` `uncertainty quantification`
+
+<br/>
+
+### ⚡ [Day-ahead electricity demand forecasting](https://github.com/Sameed11/electricity-consumption-forecasting)
+Turkish national grid load, 24 hours ahead. 39,456 hourly observations, rolling-origin backtest.
+
+**2.79% MAPE · 55% better than seasonal naive**
+
+Shipped LightGBM over a marginally better LSTM: the gap failed a paired *t*-test at 15x the
+training cost. COVID broke the model, the write-up explains exactly why.
+
+`LightGBM` `PyTorch` `time series` `backtesting` `pytest`
 
 <br/>
 
@@ -95,4 +99,4 @@ Price per m² from Immobilienscout24 listings. Exhaustive best-subsets under AIC
 ## Currently
 
 Working through LLM application engineering — retrieval pipelines, evaluation, serving.
-It gets pinned here when there's a result worth defending.
+It gets pinned here when the ongoing work is done.
