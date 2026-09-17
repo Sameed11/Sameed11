@@ -1,122 +1,98 @@
-# Ahmed Sameed
+<h1 align="center">Ahmed Sameed</h1>
 
-**Data Scientist** · Dortmund, Germany · MSc Data Science, University of Potsdam
+<p align="center">
+  Data Scientist · Dortmund, Germany<br/>
+  MSc Data Science, University of Potsdam
+</p>
 
-I build forecasting and classification systems, and I care about whether the number
-holds up. Most of what is below includes the baseline I had to beat, a significance
-test, or the reason I picked the smaller model. The failures are in the READMEs too.
+<p align="center">
+  <a href="https://linkedin.com/in/ahmed-sameed11"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
+</p>
 
-Open to Data Scientist, Data Analyst, Data Engineer and ML/AI Engineer roles across
-Germany and the EU.
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white">
+  <img src="https://img.shields.io/badge/SQL-4479A1?style=flat&logo=mysql&logoColor=white">
+  <img src="https://img.shields.io/badge/R-276DC3?style=flat&logo=r&logoColor=white">
+  <img src="https://img.shields.io/badge/LightGBM-02569B?style=flat">
+  <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=flat&logo=pytorch&logoColor=white">
+  <img src="https://img.shields.io/badge/scikit--learn-F7931E?style=flat&logo=scikitlearn&logoColor=white">
+  <img src="https://img.shields.io/badge/SQL_Server-CC2927?style=flat&logo=microsoftsqlserver&logoColor=white">
+  <img src="https://img.shields.io/badge/Power_BI-F2C811?style=flat&logo=powerbi&logoColor=black">
+  <img src="https://img.shields.io/badge/Flask-000000?style=flat&logo=flask&logoColor=white">
+</p>
 
-[LinkedIn](https://linkedin.com/in/ahmed-sameed11) · [Email](mailto:YOUR_EMAIL) · [CV](LINK_TO_PDF)
+I work on time series and tabular problems end to end: SQL to get the data usable, scikit-learn
+and PyTorch to model it, and enough engineering that the result reproduces. Each project below states
+the baseline it beat, because an accuracy figure on its own tells you nothing.
 
----
+Looking for my first full-time role — **Data Scientist, Data Analyst, Data Engineer or ML Engineer** —
+in Germany or the EU.
 
-## Where to look, depending on what you're hiring for
-
-| Role | Start here |
-|---|---|
-| Data Scientist | [Day-ahead load forecasting](https://github.com/Sameed11/electricity-consumption-forecasting) · [EEG attention states](https://github.com/Sameed11/msc-thesis-eeg-attention) |
-| Data Analyst | [Churn risk scoring](https://github.com/Sameed11/churn-risk-scoring) · [NRW rental prices](https://github.com/Sameed11/rental-price-regression-nrw) |
-| Data Engineer | [SQL data warehouse](https://github.com/Sameed11/sql-data-warehouse-project) · [forecasting pipeline](https://github.com/Sameed11/electricity-consumption-forecasting) |
-| ML Engineer | [Backtest harness + leakage tests](https://github.com/Sameed11/electricity-consumption-forecasting) · [Flask scoring service](https://github.com/Sameed11/churn-risk-scoring) |
-
----
-
-## Stack
-
-**Languages** Python · SQL (T-SQL) · R
-**ML** LightGBM · XGBoost · scikit-learn · PyTorch · TensorFlow/Keras · statsmodels
-**Data** SQL Server · medallion ETL · pandas · Power BI
-**Engineering** pytest · Flask · Git · CLI-reproducible experiments
-
----
+<br/>
 
 ## Projects
 
-### [Day-ahead electricity demand forecasting](https://github.com/Sameed11/electricity-consumption-forecasting)
-`Python` `LightGBM` `PyTorch` `time series` `backtesting`
+### ⚡ [Day-ahead electricity demand forecasting](https://github.com/Sameed11/electricity-consumption-forecasting)
+Turkish national grid load, 24 hours ahead. 39,456 hourly observations, rolling-origin backtest.
 
-24-hour-ahead forecasting of Turkish national grid load. 39,456 hourly observations
-over 4.5 years, evaluated on a rolling-origin backtest of four 90-day folds with a
-24-hour train/test gap.
+**2.79% MAPE · 55% better than seasonal naive**
 
-- **2.79% MAPE, 55% better than the seasonal-naive baseline.**
-- Shipped LightGBM over the marginally more accurate LSTM: the 1.8% gap failed a
-  paired t-test (p = 0.34) and cost 15x the training time.
-- An earlier version forecast one hour ahead against a persistence baseline. That
-  baseline is illegal for day-ahead work, and the honest one is 1.9x harder to beat.
-- COVID broke the model. Error rose 1.93x after March 2020 because 52% of it leaned
-  on demand one and two weeks old. Weekly retraining recovered 23% of the gap, and
-  the README says 23% rather than rounding it up.
-- Prediction intervals hit 65.7% coverage against a 90% target. Documented as unfit
-  for use, with conformalized quantile regression named as the fix.
-- `pytest` leakage tests reconstruct every lag column independently.
+Shipped LightGBM over a marginally better LSTM: the gap failed a paired *t*-test at 15x the
+training cost. COVID broke the model, the write-up explains exactly why.
 
-### [EEG attention state prediction](https://github.com/Sameed11/msc-thesis-eeg-attention) — MSc thesis
+`LightGBM` `PyTorch` `time series` `backtesting` `pytest`
+
+<br/>
+
+### 🧠 [EEG attention state prediction](https://github.com/Sameed11/msc-thesis-eeg-attention) · MSc thesis
+Attention states from 16-channel EEG across 9 subjects and 4 paradigms, validated leave-one-subject-out.
+
+**97.4% accuracy · F1-macro 0.972**
+
+States discovered by clustering rather than assigned in advance. Every prediction carries a
+calibrated uncertainty estimate, so low-confidence outputs can be rejected instead of trusted.
+
 `LightGBM` `XGBoost` `Transformer` `uncertainty quantification`
 
-Two-stage meta-learning pipeline classifying attention states from 16-channel EEG,
-across 9 subjects and 4 experimental paradigms, validated leave-one-subject-out.
+<br/>
 
-- **97.4% accuracy, F1-macro 0.972** under LOSO cross-validation.
-- States were discovered by k-means on spectral features rather than assigned in
-  advance, which avoids the circularity of predicting labels you defined yourself.
-- A LightGBM spectral specialist predicts 7 band-power targets (mean R² = 0.837),
-  feeding three meta-learners: logistic regression, XGBoost, and a Transformer.
-- Every model carries a calibrated uncertainty estimate. Wrong predictions run
-  2–4x more uncertain than right ones (p < 10⁻⁶, Cohen's d > 1.7), so low-confidence
-  outputs can be rejected instead of trusted.
+### 💸 [Churn risk scoring](https://github.com/Sameed11/churn-risk-scoring)
+7,043 telecom customers scored, then turned into a targeting decision with a price attached.
 
-### [Churn risk scoring with retention economics](https://github.com/Sameed11/churn-risk-scoring)
-`scikit-learn` `Flask` `business analysis`
+**AUC 0.858 · 3.1x top-decile lift · 2.8x campaign ROI**
 
-7,043 telecom customers scored for churn risk, then turned into a targeting decision:
-who gets a retention offer, and what the campaign is worth.
+Logistic regression chosen over boosting on purpose: 0.01 AUC is worth less than being able to
+tell the retention team *why* a customer scored high. Flask service included.
 
-- **Test AUC 0.858. Top-decile lift 3.1x**, catching 31% of all churners.
-- Threshold economics costed out end to end: €49.4k net at a 0.3 cut-off, 2.8x ROI,
-  against 1.3x for offering to everybody.
-- Logistic regression chosen deliberately over gradient boosting. The ~0.01 AUC
-  gain was not worth losing the sentence the retention team needs: *this customer
-  scored high because of contract type and payment method.*
-- Flask service in `deployment/` scores a single customer over HTTP; `train.py`
-  reproduces the model from scratch.
-- The README states plainly which findings are confounded and that the 30%
-  offer-acceptance rate is invented until someone measures it.
+`scikit-learn` `Flask` `decision analysis`
 
-### [SQL data warehouse: ERP + CRM sales analytics](https://github.com/Sameed11/sql-data-warehouse-project)
+<br/>
+
+### 🗄️ [SQL data warehouse](https://github.com/Sameed11/sql-data-warehouse-project)
+ERP and CRM extracts integrated into a star schema. Bronze → silver → gold, T-SQL only.
+
+**6 sources · 2 systems · no shared key format**
+
+Stored-procedure loads per layer, so a data quality issue traces back to the layer that caused it.
+Test scripts where zero rows returned means the check passed.
+
 `T-SQL` `SQL Server` `medallion architecture` `data quality`
 
-Six source files from two systems with no shared key format, landed and integrated
-into a star schema. T-SQL only, no orchestration framework, so the ETL logic is
-readable rather than hidden.
+<br/>
 
-- Bronze / silver / gold schemas with stored-procedure loads per layer, so any data
-  quality issue traces back to the layer that introduced it.
-- Silver handles deduplication, date repair on 8-digit integer dates, sales
-  reconciliation where `sales ≠ quantity × price`, and CRM-over-ERP source precedence.
-- Test scripts written so that **zero rows returned means the check passed**:
-  key uniqueness, referential integrity, range and consistency checks.
-- Column-level `data_catalog.md` documenting grain and known limitations.
+### 🌿 [Plant disease CNN](https://github.com/Sameed11/plant-disease-cnn-classification)
+Leaf disease classifier with augmentation, batch norm and dropout. **84.0% accuracy · F1 0.839**
 
-### [Plant disease CNN classification](https://github.com/Sameed11/plant-disease-cnn-classification)
-`TensorFlow/Keras` `CNN` `image augmentation`
+`TensorFlow/Keras` `CNN`
 
-Leaf disease classifier built with Conv2D/BatchNorm/Dropout and augmentation.
-**84.0% test accuracy, F1 0.839** on 1,862 held-out images.
+### 🏠 [NRW rental price regression](https://github.com/Sameed11/rental-price-regression-nrw)
+Price per m² from Immobilienscout24 listings. Exhaustive best-subsets under AIC *and* BIC, compared.
 
-### [NRW rental price regression](https://github.com/Sameed11/rental-price-regression-nrw)
-`R` `statistical inference` `model selection`
+`R` `statistical inference`
 
-Price per square metre across North Rhine-Westphalia from Immobilienscout24 listings.
-Exhaustive best-subsets selection under both AIC and BIC via `bestglm`, with the two
-criteria compared rather than one picked silently.
-
----
+<br/>
 
 ## Currently
 
-Learning LLM application engineering: retrieval pipelines, evaluation, and serving.
-Repo going up here once it does something worth reading about.
+Working through LLM application engineering — retrieval pipelines, evaluation, serving.
+It gets pinned here when there's a result worth defending.
